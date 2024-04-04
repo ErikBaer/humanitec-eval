@@ -23,4 +23,5 @@ containers:
 resources:
   redis:  # We need a Redis to store data
     type: custom-azure-redis-cache
+
     
