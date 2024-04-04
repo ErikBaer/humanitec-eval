@@ -1,0 +1,9 @@
+score-humanitec delta \
+              -f hum_definitions/applications/redis_commander-score.yaml \
+              --app  test-111 \
+              --env development \
+              --org tw-empc-poc \
+              --token ${HUMANITEC_TOKEN} \
+              --deploy
+
+humctl get resource-definition custom-azure-redis-cache --org tw-empc-poc --token $HUMANITEC_TOKEN

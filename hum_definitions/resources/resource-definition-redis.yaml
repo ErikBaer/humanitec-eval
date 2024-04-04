@@ -9,11 +9,11 @@ entity:
   driver_inputs:
     values:
       source: 
-        url: https://github.com/ErikBaer/humanitec-eval.git/tf-resources/azure-redis-cache
+        url: https://github.com/ErikBaer/humanitec-eval.git/tf-resources/tf-azure-redis-cache
         rev: refs/heads/main
       variables: 
-        resource_group_name: 
-        location: 
+        resource_group_name: ref-arch
+        location: ger-west-central
         environment: ${context.env.id}
         app_name: ${context.app.id}
         resource_name: ${context.res.id}
@@ -23,4 +23,4 @@ entity:
         - name: access_key
           value: ${output.redis_cache_access_key}
   criteria:
-  - env_type: production
+  - env_type: development

@@ -28,13 +28,17 @@ resource "azurerm_redis_cache" "example" {
   }
 }
 
-output "redis_cache_hostname" {
+output "hostname" {
   value = azurerm_redis_cache.example.hostname
 }
 
-output "redis_cache_primary_access_key" {
+output "primary_access_key" {
   value = azurerm_redis_cache.example.primary_access_key
   sensitive = true
+}
+
+output "port" {
+  value = 6380  # Default SSL port for Azure Redis Cache
 }
 
 
