@@ -20,4 +20,4 @@ jobs:
         run: humctl apply -f hum_definitions/resources/resource-definition-redis.yaml --org tw-empc-poc --token ${{ secrets.HUMANITEC_TOKEN }}
 
       - name: Verify deployment
-        run: humctl get resource-definition production-redis --org tw-empc-poc --token ${{ secrets.HUMANITEC_TOKEN }}
+        run: humctl get resource-definition custom-azure-redis-cache --org tw-empc-poc --token ${{ secrets.HUMANITEC_TOKEN }}
