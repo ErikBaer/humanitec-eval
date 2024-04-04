@@ -15,3 +15,9 @@ jobs:
           # Check https://github.com/humanitec/cli/releases for available versions
           version: "0.17.0"
       - run: humctl version
+
+      - name: Deploy to Humanitec
+        run: humctl apply -f resource-definition-redis.yaml --org tw-empc-poc --token $HUMANITEC_TOKEN
+
+      - name: Verify deployment
+        run: humctl get resource-definition production-redis --org tw-empc-poc --token $HUMANITEC_TOKEN
