@@ -1,0 +1,22 @@
+apiVersion: entity.humanitec.io/v1b1
+kind: Definition
+metadata:
+  id: production-redis
+entity:
+  type: redis
+  name: Production-Redis
+  driver_type: humanitec/terraform
+  driver_inputs:
+    values:
+      source: 
+        url: https://github.com/Humanitec-DemoOrg/redis-elasticache-example.git
+        rev: refs/heads/main
+      variables: 
+        vpc_id: 
+        subnet_ids: [""]
+        region: 
+        environment: ${context.env.id}
+        app_name: ${context.app.id}
+        resource_name: ${context.res.id}
+  criteria:
+  - env_type: production
