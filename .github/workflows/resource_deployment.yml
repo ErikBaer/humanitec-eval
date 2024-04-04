@@ -12,13 +12,21 @@ jobs:
       - name: Check Out Repository
         uses: actions/checkout@v2
 
-      - name: Update Resource Definition in Humanitec
+      - name: Create Resource Definition in Humanitec
         run: |
           curl -X POST -H "Authorization: Bearer ${{ secrets.HUMANITEC_TOKEN }}" -H "Content-Type: application/json" \
-          -d hum?definitions/resources/redis-cache.json \
-          "https://api.humanitec.io/orgs/tw-empc-poc/apps/test-111/resources/azure-redis-cache"
+          -d hum/definitions/resources/redis-cache.json \
+          "https://api.humanitec.io/resources"
+          
 
-      - name: Trigger Deployment in Humanitec (Optional)
-        run: |
-          curl -X POST -H "Authorization: Bearer ${{ secrets.HUMANITEC_TOKEN }}" \
-          "https://api.humanitec.io/orgs/tw-empc-poc/apps/test-111/deployments"
+      # - name: Update Resource Definition in Humanitec
+      #   run: |
+      #     curl -X POST -H "Authorization: Bearer ${{ secrets.HUMANITEC_TOKEN }}" -H "Content-Type: application/json" \
+      #     -d hum/definitions/resources/redis-cache.json \
+        
+      #     "https://api.humanitec.io/orgs/tw-empc-poc/apps/test-111/resources/azure-redis-cache"
+
+      # - name: Trigger Deployment in Humanitec (Optional)
+      #   run: |
+      #     curl -X POST -H "Authorization: Bearer ${{ secrets.HUMANITEC_TOKEN }}" \
+      #     "https://api.humanitec.io/orgs/tw-empc-poc/apps/test-111/deployments"
