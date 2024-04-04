@@ -1,0 +1,63 @@
+{
+  "type": "external-resource",
+  "id": "azure-redis-cache",
+  "name": "Azure Redis Cache",
+  "version": "1.0",
+  "provider": {
+    "type": "terraform",
+    "source": "https://github.com/your-organization/your-repository/path/to/terraform/azure_redis_cache.tf",
+    "version": "0.14"
+  },
+  "parameters": {
+    "resource_group_name": {
+      "type": "string",
+      "description": "The name of the resource group that the Redis cache will belong to."
+    },
+    "redis_cache_name": {
+      "type": "string",
+      "description": "The name of the Redis cache instance."
+    },
+    "location": {
+      "type": "string",
+      "description": "The Azure region where the Redis cache will be deployed."
+    },
+    "sku_name": {
+      "type": "string",
+      "description": "The SKU name of the Redis cache to create."
+    },
+    "sku_family": {
+      "type": "string",
+      "description": "The SKU family of the Redis cache to create."
+    },
+    "sku_capacity": {
+      "type": "integer",
+      "description": "The size of the Redis cache to deploy, from 0 to 6."
+    },
+    "enable_non_ssl_port": {
+      "type": "boolean",
+      "description": "Enables or disables the non-SSL port (6379)."
+    },
+    "tags": {
+      "type": "object",
+      "description": "A mapping of tags to assign to the resource."
+    }
+  },
+  "outputs": {
+    "hostname": {
+      "type": "string",
+      "description": "The host name of the Redis cache."
+    },
+    "ssl_port": {
+      "type": "integer",
+      "description": "The SSL port of the Redis cache."
+    },
+    "access_keys": {
+      "type": "object",
+      "description": "The access keys for the Redis cache."
+    },
+    "redis_version": {
+      "type": "string",
+      "description": "The version of Redis installed."
+    }
+  }
+}
