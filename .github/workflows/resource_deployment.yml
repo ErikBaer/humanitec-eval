@@ -12,11 +12,24 @@ jobs:
       - name: Check Out Repository
         uses: actions/checkout@v2
 
-      - name: Create Resource Definition in Humanitec
+      - name: Create Redis Cache Resource in Humanitec
+        id: create_resource
         run: |
-          curl -X POST -H "Authorization: Bearer ${{ secrets.HUMANITEC_TOKEN }}" -H "Content-Type: application/json" \
-          -d hum/definitions/resources/redis-cache.json \
-          "https://api.humanitec.io/resources"
+          RESPONSE=$(curl -s -X POST -H "Authorization: Bearer ${{ secrets.HUMANITEC_TOKEN }}" -H "Content-Type: application/json" \
+          -d hum_definitions/resources/redis-cache.json \
+          "https://api.humanitec.io/resources")
+          echo "Resource creation response: $RESPONSE"
+          RESOURCE_ID=$(echo $RESPONSE | jq -r '.id')
+          echo "::set-output name=resource_id::$RESOURCE_ID"
+      
+      - name: Use Resource ID
+        run: echo "The new resource ID is ${{ steps.create_resource.outputs.resource_id }}"
+
+      # - name: Create Resource Definition in Humanitec
+      #   run: |
+      #     curl -X POST -H "Authorization: Bearer ${{ secrets.HUMANITEC_TOKEN }}" -H "Content-Type: application/json" \
+      #     -d hum/definitions/resources/redis-cache.json \
+      #     "https://api.humanitec.io/resources"
           
 
       # - name: Update Resource Definition in Humanitec
