@@ -22,5 +22,5 @@ entity:
           value: ${output.redis_cache_hostname}
         - name: access_key
           value: ${output.redis_cache_access_key}
-  criteria:
-  - env_type: development
+  # criteria:
+  # - env_type: development
