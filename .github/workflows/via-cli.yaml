@@ -17,7 +17,7 @@ jobs:
       - run: humctl version
 
       - name: Deploy to Humanitec
-        run: humctl apply -f resource-definition-redis.yaml --org tw-empc-poc --token $HUMANITEC_TOKEN
+        run: humctl apply -f resource-definition-redis.yaml --org tw-empc-poc --token ${{ secrets.HUMANITEC_TOKEN }}
 
       - name: Verify deployment
-        run: humctl get resource-definition production-redis --org tw-empc-poc --token $HUMANITEC_TOKEN
+        run: humctl get resource-definition production-redis --org tw-empc-poc --token ${{ secrets.HUMANITEC_TOKEN }}
