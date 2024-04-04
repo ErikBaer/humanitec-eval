@@ -22,4 +22,5 @@ containers:
 # Define the resources that this service needs
 resources:
   redis:  # We need a Redis to store data
-    type: custom-azure-redis-cache
+    type: default
+    id: custom-azure-redis-cache
