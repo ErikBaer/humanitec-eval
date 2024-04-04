@@ -3,7 +3,7 @@ kind: Definition
 metadata:
   id: custom-azure-redis-cache
 entity:
-  type: custom-azure-redis-cache
+  type: redis
   name: custom-azure-redis-cache
   driver_type: humanitec/terraform
   driver_inputs:
