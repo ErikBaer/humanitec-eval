@@ -3,13 +3,13 @@ kind: Definition
 metadata:
   id: custom-azure-redis-cache
 entity:
-  type: custom-azure-redis-cache
+  type: redis
   name: Azure Redis Cache
   driver_type: humanitec/terraform
   driver_inputs:
     values:
       source: 
-        url: "https://github.com/ErikBaer/humanitec-eval-redis"
+        url: "https://github.com/ErikBaer/humanitec-eval-redis.git"
         rev: "refs/heads/main"
       variables: 
         resource_group_name: "ref-arch"
@@ -22,3 +22,4 @@ entity:
           value: "${output.hostname}"
         - name: access_key
           value: "${output.primary_access_key}"
+      

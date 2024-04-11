@@ -15,13 +15,13 @@ containers:
   redis-commander:
     image: rediscommander/redis-commander:latest
     variables:
-      REDIS_HOST: ${resources.redis.hostname}
-      REDIS_PORT: ${resources.redis.port}
-      REDIS_PASSWORD: ${resources.redis.primary_access_key}
+      REDIS_HOST: ${resources.azure-redis.hostname}
+      REDIS_PORT: ${resources.azure-redis.port}
+      REDIS_PASSWORD: ${resources.azure-redis.primary_access_key}
 
 # Define the resources that this service needs
 resources:
   azure-redis:  # Updated to match the custom resource name in Humanitec
-    type: custom-azure-redis-cache  # This should match the type defined in Humanitec
+    type: redis  # This should match the type defined in Humanitec
 
     
