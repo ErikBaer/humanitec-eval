@@ -1,6 +1,6 @@
 score-humanitec delta \
               -f hum_definitions/applications/redis_commander-score.yaml \
-              --app  test-111 \
+              --app  demo001 \
               --env development \
               --org tw-empc-poc \
               --token ${HUMANITEC_TOKEN} \

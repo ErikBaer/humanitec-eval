@@ -21,7 +21,7 @@ containers:
 
 # Define the resources that this service needs
 resources:
-  azure-redis:  # Updated to match the custom resource name in Humanitec
+  custom-azure-redis-cache:  # Updated to match the custom resource name in Humanitec
     type: redis  # This should match the type defined in Humanitec
 
     

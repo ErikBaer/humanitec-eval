@@ -4,7 +4,7 @@ metadata:
   id: custom-azure-redis-cache
 entity:
   type: redis
-  name: Azure Redis Cache
+  name: custom-redis
   driver_type: humanitec/terraform
   driver_inputs:
     values:
