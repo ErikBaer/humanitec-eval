@@ -9,7 +9,7 @@ entity:
   driver_inputs:
     values:
       source: 
-        url: "https://github.com/ErikBaer/humanitec-eval-redis.git"
+        url: "https://github.com/humanitec-architecture/resource-packs-azure/tree/main/examples/redis"
         rev: "refs/heads/main"
       variables: 
         resource_group_name: "ref-arch"

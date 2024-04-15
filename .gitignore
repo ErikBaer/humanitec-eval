@@ -1,2 +1,4 @@
 .DS_Store
 .secret
+.keys/humanitec_operator_private_key.pem
+.keys/humanitec_operator_public_key.pem
