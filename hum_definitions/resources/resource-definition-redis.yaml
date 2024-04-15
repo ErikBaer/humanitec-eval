@@ -8,15 +8,21 @@ entity:
   driver_type: humanitec/terraform
   driver_inputs:
     values:
-      source: 
-        url: "https://github.com/humanitec-architecture/resource-packs-azure/tree/main/examples/redis"
-        rev: "refs/heads/main"
+      # source: 
+      #   url: "https://github.com/humanitec-architecture/resource-packs-azure/tree/main/examples/redis"
+      #   rev: "refs/heads/main"
       variables: 
         resource_group_name: "ref-arch"
-        location: "ger-west-central"
-        environment: "${context.env.id}"
-        app_name: "${context.app.id}"
-        resource_name: "${context.res.id}"
+        # location: "ger-west-central"
+        # environment: "${context.env.id}"
+        # app_name: "${context.app.id}"
+        # resource_name: "${context.res.id}"
+        subscription_id: "d02d331d-d44f-4370-b39b-eea3ae0392a7"
+        name: "custom-redis-rspack"
+        prefix: "poc"
+        resource_packs_azure_rev: "refs/heads/main"
+        resource_packs_azure_url: "https://github.com/humanitec-architecture/resource-packs-azure.git"
+
       # outputs:
       #   - name: hostname
       #     value: "${output.hostname}"
